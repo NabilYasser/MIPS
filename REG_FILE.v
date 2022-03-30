@@ -26,7 +26,7 @@ always @(posedge clk or negedge RST ) begin
         for ( i=0 ;i <Depth ;i=i+1 ) begin
             RegFile[i]<='b0;
         end
-    end else if(WD3==1'b1) begin
+    end else if(WE3==1'b1) begin
         RegFile[A3]<=WD3;
     end
 end

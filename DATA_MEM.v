@@ -6,6 +6,7 @@ module DATA_MEM #(
     input wire                 WREnable,
     input wire                 clk,
     input wire                 RST,
+    output reg [15:0]         Test_value,
     output reg [DataWidth-1:0] REData
 );
     reg [DataWidth-1:0] Data_Memory [0:Depth-1];
@@ -13,6 +14,10 @@ module DATA_MEM #(
 
     always @(*) begin
     REData=Data_Memory[Addres];
+    end
+
+    always @(*) begin
+        Test_value=Data_Memory[32'h0];
     end
     
 always @(posedge clk or negedge RST) begin

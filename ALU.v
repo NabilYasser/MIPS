@@ -22,8 +22,8 @@ always @(*) begin
         end
 
          3'b011: begin
-            ALUResult=32'b0; // *! Should NOT USED SET ALUResult to 0
-        end
+            ALUResult=32'b0; // *? Should NOT SET ALUResult to 0
+          end
 
           3'b100: begin
             ALUResult=SrcA - SrcB;
@@ -52,12 +52,10 @@ always @(*) begin
         end
 
          3'b111: begin
-            ALUResult=32'b0; // *! Should NOT USED SET ALUResult to 0
+            ALUResult=32'b0; // *? Should NOT SET ALUResult to 0
         end
-
-
-        
-        default: ALUResult=32'b0; // *! Should The defult ALUResult = 0
+   
+        default: ALUResult=32'b0; // *? Should The defult be ALUResult = 0
     endcase
 end
 
